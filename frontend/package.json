@@ -62,8 +62,8 @@
   },
   "lint-staged": {
     "src/**/*": [
-      "npm prettier:format",
-      "npm eslint:format"
+      "npm run prettier:format",
+      "npm run eslint:format"
     ]
   }
 }

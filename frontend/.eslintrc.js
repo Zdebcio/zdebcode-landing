@@ -26,8 +26,6 @@ module.exports = {
   ],
   plugins: ['react', '@typescript-eslint', 'react-hooks', 'eslint-plugin-import-helpers'],
   rules: {
-    'no-anonymous-exports-page-templates': 'warn',
-    'limited-exports-page-templates': 'warn',
     'react-hooks/rules-of-hooks': 2,
     'react-hooks/exhaustive-deps': 1,
     'newline-before-return': 2,
