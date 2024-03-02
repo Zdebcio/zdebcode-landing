@@ -1,9 +1,8 @@
 {
-  "name": "zdeb-code",
+  "name": "frontend",
   "version": "1.0.0",
   "private": true,
-  "description": "zdeb-code",
-  "author": "Adam Zdebel",
+  "description": "frontend",
   "keywords": [
     "gatsby"
   ],
@@ -13,6 +12,10 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "prettier:format": "prettier --write .",
+    "prettier:check": "prettier --check \"**/*.{ts,tsx,json}\"",
+    "lint": "next lint",
+    "eslint:format": "eslint src --fix",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -52,8 +55,15 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-webpack-plugin": "^4.0.1",
     "gatsby-plugin-eslint": "^4.0.4",
+    "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "typescript": "^5.3.3"
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "npm prettier:format",
+      "npm eslint:format"
+    ]
   }
 }
