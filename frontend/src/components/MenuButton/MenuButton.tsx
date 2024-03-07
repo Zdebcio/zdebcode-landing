@@ -1,16 +1,15 @@
 import React, { MouseEvent } from 'react';
 
 import { cn } from '../../lib/utils';
-import CloseIcon from '../icons/CloseIcon';
-import MenuIcon from '../icons/MenuIcon';
+import { CloseIcon, MenuIcon } from '../icons';
 
-interface MenuButtonProps {
+export interface MenuButtonProps {
   open: boolean;
   toggleClick: (event: MouseEvent<HTMLElement>) => void;
   className?: string;
 }
 
-const MenuButton = ({ open, toggleClick, className }: MenuButtonProps) => {
+export const MenuButton = ({ open, toggleClick, className }: MenuButtonProps) => {
   const buttonStyles = cn(
     'btn btn-circle btn-link swap swap-rotate',
     open ? 'swap-active' : '',
@@ -24,5 +23,3 @@ const MenuButton = ({ open, toggleClick, className }: MenuButtonProps) => {
     </button>
   );
 };
-
-export default MenuButton;

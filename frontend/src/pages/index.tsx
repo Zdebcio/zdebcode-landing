@@ -1,7 +1,7 @@
 import { HeadFC, PageProps } from 'gatsby';
 import * as React from 'react';
 
-import StartSection from '../components/StartSection/StartSection';
+import { StartSection } from '../components/StartSection';
 
 const IndexPage: React.FC<PageProps> = () => {
   return (

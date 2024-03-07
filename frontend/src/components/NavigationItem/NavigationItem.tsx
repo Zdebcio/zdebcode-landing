@@ -7,7 +7,7 @@ export interface NavigationItemProps {
   click?: () => void;
 }
 
-const NavigationItem = ({ to, title, click }: NavigationItemProps) => (
+export const NavigationItem = ({ to, title, click }: NavigationItemProps) => (
   <AnchorLink
     className="font-semibold uppercase text-primary"
     to={to}
@@ -17,5 +17,3 @@ const NavigationItem = ({ to, title, click }: NavigationItemProps) => (
     <span>{title}</span>
   </AnchorLink>
 );
-
-export default NavigationItem;

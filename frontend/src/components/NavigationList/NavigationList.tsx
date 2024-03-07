@@ -1,14 +1,14 @@
 import React from 'react';
 
 import { cn } from '../../lib/utils';
-import NavigationItem from '../NavigationItem/NavigationItem';
+import { NavigationItem } from '../NavigationItem';
 
 export interface NavigationListProps {
   className?: string;
   itemClick?: () => void;
 }
 
-const NavigationList = ({ className, itemClick }: NavigationListProps) => (
+export const NavigationList = ({ className, itemClick }: NavigationListProps) => (
   <ul className={cn('flex gap-4', className)}>
     <li>
       <NavigationItem to="/#start" title="Start" click={itemClick} />
@@ -33,5 +33,3 @@ const NavigationList = ({ className, itemClick }: NavigationListProps) => (
     </li>
   </ul>
 );
-
-export default NavigationList;

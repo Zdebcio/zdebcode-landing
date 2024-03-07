@@ -2,12 +2,12 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links';
 import React from 'react';
 
 import { useStickyElement } from '../../hooks';
-import Logo from '../Logo/Logo';
-import MobileNavigation from '../MobileNavigationList/MobileNavigation';
-import NavigationList from '../NavigationList/NavigationList';
+import { Logo } from '../Logo';
+import { MobileNavigation } from '../MobileNavigationList';
+import { NavigationList } from '../NavigationList';
 import { useNavigationStyles } from './useNavigationStyles';
 
-const Navigation = () => {
+export const Navigation = () => {
   const { elementRef, isNavPinned } = useStickyElement();
   const { logoStyles, navigationStyles } = useNavigationStyles(isNavPinned);
 
@@ -25,5 +25,3 @@ const Navigation = () => {
     </nav>
   );
 };
-
-export default Navigation;
