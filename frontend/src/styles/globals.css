@@ -7,3 +7,11 @@
     font-family: 'Rubik', sans-serif;
   }
 }
+
+@layer components {
+  .start::before {
+    @apply absolute left-0 top-0 -z-10 block h-0 w-0 content-[''];
+    @apply border-r-[60vw] border-t-[60vw] border-solid border-r-transparent border-t-primary;
+    @apply lg:border-r-[40vw] lg:border-t-[75svh] xl:border-r-[40vw] xl:border-t-[100svh];
+  }
+}
