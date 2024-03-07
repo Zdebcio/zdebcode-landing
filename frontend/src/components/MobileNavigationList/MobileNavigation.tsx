@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 
 import { useOutsideClick } from '../../hooks';
 import { cn } from '../../lib/utils';
+import { NavigationLink } from '../../ts/interfaces';
 import { MenuButton } from '../MenuButton';
 import { NavigationList } from '../NavigationList';
 
 export interface MobileNavigationProps {
+  items: NavigationLink[];
   className?: string;
 }
 
-export const MobileNavigation = ({ className }: MobileNavigationProps) => {
+export const MobileNavigation = ({ items, className }: MobileNavigationProps) => {
   const handleClickOutsideMobileMenu = () => {
     isMenuOpened && handleMenuToggle(false);
   };
@@ -28,6 +30,7 @@ export const MobileNavigation = ({ className }: MobileNavigationProps) => {
       <MenuButton toggleClick={() => handleMenuToggle()} open={isMenuOpened} />
       {isMenuOpened && (
         <NavigationList
+          items={items}
           itemClick={() => handleMenuToggle(false)}
           className="menu dropdown-content z-[1] mt-4 w-52 rounded-box bg-base-200 p-2 shadow"
         />
