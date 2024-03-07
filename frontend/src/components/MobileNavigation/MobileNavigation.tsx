@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
+import { useOutsideClick } from '../../hooks';
 import { cn } from '../../lib/utils';
 import MenuButton from '../MenuButton/MenuButton';
 import NavigationList from '../NavigationList/NavigationList';
-import { useOutsideClick } from './MobileNavigation.utils';
 
 export interface MobileNavigationProps {
   className?: string;

@@ -14,4 +14,8 @@
     @apply border-r-[60vw] border-t-[60vw] border-solid border-r-transparent border-t-primary;
     @apply lg:border-r-[40vw] lg:border-t-[75svh] xl:border-r-[40vw] xl:border-t-[100svh];
   }
+
+  .navbar-container {
+    @apply navbar relative top-0 z-50 min-h-20 bg-transparent px-5 transition-colors sm:px-14 lg:px-20;
+  }
 }
