@@ -3,7 +3,7 @@ import React from 'react';
 
 import { useStickyElement } from '../../hooks';
 import Logo from '../Logo/Logo';
-import MobileNavigation from '../MobileNavigation/MobileNavigation';
+import MobileNavigation from '../MobileNavigationList/MobileNavigation';
 import NavigationList from '../NavigationList/NavigationList';
 import { useNavigationStyles } from './useNavigationStyles';
 
