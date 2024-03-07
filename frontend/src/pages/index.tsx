@@ -7,7 +7,7 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <main>
       <StartSection />
-      <div id="aaa" className="min-h-svh"></div>
+      <div className="min-h-svh"></div>
     </main>
   );
 };
