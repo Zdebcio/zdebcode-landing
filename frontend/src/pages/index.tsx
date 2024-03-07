@@ -1,14 +1,13 @@
 import { HeadFC, PageProps } from 'gatsby';
 import * as React from 'react';
 
+import StartSection from '../components/StartSection/StartSection';
+
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <main>
-      <h1>
-        Congratulations
-        <br />
-        <span>— you just made a Gatsby site! 🎉🎉🎉</span>
-      </h1>
+      <StartSection />
+      <div id="aaa" className="min-h-svh"></div>
     </main>
   );
 };
