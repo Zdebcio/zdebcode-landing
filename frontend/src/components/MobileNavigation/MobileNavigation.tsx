@@ -4,7 +4,7 @@ import { useOutsideClick } from '../../hooks';
 import { cn } from '../../lib/utils';
 import { NavigationLink } from '../../ts/interfaces';
 import { MenuButton } from '../MenuButton';
-import { NavigationList } from '../NavigationList';
+import { Navigation } from '../Navigation';
 
 export interface MobileNavigationProps {
   items: NavigationLink[];
@@ -29,7 +29,7 @@ export const MobileNavigation = ({ items, className }: MobileNavigationProps) =>
     >
       <MenuButton toggleClick={() => handleMenuToggle()} open={isMenuOpened} />
       {isMenuOpened && (
-        <NavigationList
+        <Navigation
           items={items}
           itemClick={() => handleMenuToggle(false)}
           className="menu dropdown-content z-[1] mt-4 w-52 rounded-box bg-base-200 p-2 shadow"

@@ -2,12 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 
 export const useStickyElement = () => {
   const elementRef = useRef<HTMLDivElement>(null);
-  const [isNavPinned, setIsNavPinned] = useState<boolean>(false);
+  const [isElementPinned, setIsElementPinned] = useState<boolean>(false);
 
   useEffect(() => {
     const offsetTop = elementRef.current?.offsetTop ?? 0;
 
-    const handleSetElementSticky = () => setIsNavPinned(window.scrollY >= offsetTop);
+    const handleSetElementSticky = () => setIsElementPinned(window.scrollY >= offsetTop);
 
     handleSetElementSticky();
 
@@ -18,5 +18,5 @@ export const useStickyElement = () => {
     };
   }, [elementRef]);
 
-  return { elementRef, isNavPinned };
+  return { elementRef, isElementPinned };
 };
