@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { useOutsideClick } from '../../hooks';
+import { useElementToggle } from '../../hooks';
 import { cn } from '../../lib/utils';
 import { NavigationLink } from '../../ts/interfaces';
 import { MenuButton } from '../MenuButton';
@@ -12,26 +13,28 @@ export interface MobileNavigationProps {
 }
 
 export const MobileNavigation = ({ items, className }: MobileNavigationProps) => {
+  const { isElementOpened, handleElementToggle } = useElementToggle();
+
   const handleClickOutsideMobileMenu = () => {
-    isMenuOpened && handleMenuToggle(false);
+    isElementOpened && handleElementToggle(false);
   };
 
   const mobileMenuRef = useOutsideClick(handleClickOutsideMobileMenu);
 
-  const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
-
-  const handleMenuToggle = (shouldOpen?: boolean) => setIsMenuOpened(shouldOpen ?? !isMenuOpened);
-
   return (
     <div
       ref={mobileMenuRef}
-      className={cn('dropdown dropdown-end xl:hidden', isMenuOpened && 'dropdown-open', className)}
+      className={cn(
+        'dropdown dropdown-end xl:hidden',
+        isElementOpened && 'dropdown-open',
+        className
+      )}
     >
-      <MenuButton toggleClick={() => handleMenuToggle()} open={isMenuOpened} />
-      {isMenuOpened && (
+      <MenuButton toggleClick={() => handleElementToggle()} open={isElementOpened} />
+      {isElementOpened && (
         <Navigation
           items={items}
-          itemClick={() => handleMenuToggle(false)}
+          itemClick={() => handleElementToggle(false)}
           className="menu dropdown-content z-[1] mt-4 w-52 rounded-box bg-base-200 p-2 shadow"
         />
       )}
