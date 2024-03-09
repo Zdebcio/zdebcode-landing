@@ -35,7 +35,7 @@ export const MobileNavigation = ({ items, className }: MobileNavigationProps) =>
         <Navigation
           items={items}
           itemClick={() => handleElementToggle(false)}
-          className="menu dropdown-content z-[1] mt-4 w-52 rounded-box bg-base-200 p-2 shadow"
+          className="mobile-nav"
         />
       )}
     </div>

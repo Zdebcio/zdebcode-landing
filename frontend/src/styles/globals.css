@@ -17,5 +17,20 @@
 
   .navbar-container {
     @apply navbar relative top-0 z-50 min-h-20 bg-transparent px-5 transition-colors sm:px-14 lg:px-20;
+    @apply px-5 sm:px-14 lg:px-20;
+  }
+
+  .mobile-nav {
+    @apply menu dropdown-content z-[1] mt-4 w-52 rounded-box bg-base-200 p-2 shadow;
+  }
+
+  .nav-link {
+    @apply font-semibold uppercase text-primary transition-colors hover:text-secondary;
+  }
+
+  .mobile-nav li > .nav-link {
+    @apply hover:bg-primary/5 hover:text-secondary;
+    @apply focus:bg-primary/5 focus:text-secondary;
+    @apply active:bg-primary/10 active:text-secondary;
   }
 }
