@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { useOutsideClick } from '../../hooks';
-import { useElementToggle } from '../../hooks';
 import { cn } from '../../lib/utils';
 import { NavigationLink } from '../../ts/interfaces';
 import { MenuButton } from '../MenuButton';
 import { Navigation } from '../Navigation';
+import { useMobileNavigation } from './useMobileNavigation';
 
 export interface MobileNavigationProps {
   items: NavigationLink[];
@@ -13,23 +12,16 @@ export interface MobileNavigationProps {
 }
 
 export const MobileNavigation = ({ items, className }: MobileNavigationProps) => {
-  const { isElementOpened, handleElementToggle } = useElementToggle();
+  const { isElementOpened, handleElementToggle, mobileMenuRef } = useMobileNavigation();
 
-  const handleClickOutsideMobileMenu = () => {
-    isElementOpened && handleElementToggle(false);
-  };
-
-  const mobileMenuRef = useOutsideClick(handleClickOutsideMobileMenu);
+  const dropdownStyles = cn(
+    'dropdown dropdown-end xl:hidden',
+    isElementOpened && 'dropdown-open',
+    className
+  );
 
   return (
-    <div
-      ref={mobileMenuRef}
-      className={cn(
-        'dropdown dropdown-end xl:hidden',
-        isElementOpened && 'dropdown-open',
-        className
-      )}
-    >
+    <div ref={mobileMenuRef} className={dropdownStyles}>
       <MenuButton toggleClick={() => handleElementToggle()} open={isElementOpened} />
       {isElementOpened && (
         <Navigation
