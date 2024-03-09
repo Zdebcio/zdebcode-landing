@@ -9,19 +9,29 @@
 }
 
 @layer components {
+  .start {
+    @apply relative min-h-svh py-3 sm:py-5 lg:py-10;
+  }
+
   .start::before {
     @apply absolute left-0 top-0 -z-10 block h-0 w-0 content-[''];
-    @apply border-r-[60vw] border-t-[60vw] border-solid border-r-transparent border-t-primary;
-    @apply lg:border-r-[40vw] lg:border-t-[75svh] xl:border-r-[40vw] xl:border-t-[100svh];
+    @apply border-solid border-r-transparent border-t-primary;
+    @apply portrait:border-r-[60vw] portrait:border-t-[60vw];
+    @apply landscape:border-r-[60vw] landscape:border-t-[100svh] xl:landscape:border-r-[40vw];
   }
 
   .navbar-container {
-    @apply navbar relative top-0 z-50 min-h-20 bg-transparent px-5 transition-colors sm:px-14 lg:px-20;
-    @apply px-5 sm:px-14 lg:px-20;
+    @apply navbar relative top-0 z-50 min-h-20 bg-transparent transition-colors;
+    @apply px-5 sm:px-8 md:px-10 lg:px-20;
   }
 
   .mobile-nav {
-    @apply menu dropdown-content z-[1] mt-4 w-52 rounded-box bg-base-200 p-2 shadow;
+    @apply menu dropdown-content menu-horizontal z-[1] mt-4 w-80 bg-base-200 p-2 shadow tall:menu-vertical md:w-96 tall:w-48;
+  }
+
+  .mobile-nav li {
+    @apply tall:basis-auto;
+    flex-basis: calc(50% - theme(gap.4));
   }
 
   .nav-link {
