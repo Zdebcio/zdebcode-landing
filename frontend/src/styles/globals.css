@@ -25,7 +25,7 @@
   }
 
   .nav-link {
-    @apply font-semibold uppercase text-primary transition-colors hover:text-secondary;
+    @apply font-semibold uppercase text-primary transition-colors xl:btn xl:btn-link hover:text-secondary xl:px-1 xl:no-underline xl:hover:no-underline;
   }
 
   .mobile-nav li > .nav-link {
