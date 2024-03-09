@@ -24,16 +24,18 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className={navigationStyles} ref={elementRef}>
-      <div className="flex-1">
-        <AnchorLink to="/#start" title="Start">
-          <Logo className={logoStyles} />
-        </AnchorLink>
-      </div>
-      <div className="flex-none">
-        <Navigation items={links} className="hidden xl:flex" />
-        <MobileNavigation items={links} />
-      </div>
-    </nav>
+    <div className="min-h-20 w-full" ref={elementRef}>
+      <nav className={navigationStyles}>
+        <div className="flex-1">
+          <AnchorLink to="/#start" title="Start">
+            <Logo className={logoStyles} />
+          </AnchorLink>
+        </div>
+        <div className="flex-none">
+          <Navigation items={links} className="hidden xl:flex" />
+          <MobileNavigation items={links} />
+        </div>
+      </nav>
+    </div>
   );
 };
