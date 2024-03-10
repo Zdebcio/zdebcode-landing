@@ -1,0 +1,7 @@
+{
+  "eslint.experimental.useFlatConfig": false,
+  "eslint.workingDirectories": [
+    { "pattern": "./backend/*/" },
+    { "pattern": "./frontend/*/" }
+  ]
+}
