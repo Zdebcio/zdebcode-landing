@@ -2,7 +2,11 @@
 module.exports = {
   content: [`./src/pages/**/*.{js,jsx,ts,tsx}`, `./src/components/**/*.{js,jsx,ts,tsx}`],
   theme: {
-    extend: {}
+    extend: {
+      screens: {
+        tall: { raw: '(min-height: 500px)' }
+      }
+    }
   },
   plugins: [require('daisyui')],
   daisyui: {
@@ -18,6 +22,7 @@ module.exports = {
           neutral: '#1B1A38',
           'neutral-content': '#FFFFFF',
           'base-100': '#020122',
+          'base-200': '#010114',
           'base-content': '#FFFFFF',
           info: '#006ee7',
           success: '#00c94f',
