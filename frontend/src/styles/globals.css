@@ -21,7 +21,11 @@
   }
 
   .start-content {
-    @apply section-px flex flex-grow flex-col items-center justify-center md:items-end;
+    @apply section-px flex flex-1 flex-col items-center justify-center gap-4 landscape:items-end;
+  }
+
+  .start-btn {
+    @apply btn btn-circle btn-outline border-2 text-xl;
   }
 
   .navbar-container {

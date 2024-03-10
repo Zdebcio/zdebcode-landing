@@ -1,5 +1,13 @@
 import React from 'react';
 
-export const StartSection = () => {
-  return <section id="start" className="start"></section>;
-};
+import { StartLinks } from '../StartLinks';
+import { StartTitle } from '../StartTitle';
+
+export const StartSection = () => (
+  <section id="start" className="start">
+    <div className="start-content">
+      <StartTitle />
+      <StartLinks />
+    </div>
+  </section>
+);
