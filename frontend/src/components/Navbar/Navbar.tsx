@@ -24,7 +24,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <div className="min-h-20 w-full" ref={elementRef}>
+    <header className="navbar-container" ref={elementRef}>
       <nav className={navigationStyles}>
         <div className="flex-1">
           <AnchorLink to="/#start" title="Start">
@@ -36,6 +36,6 @@ export const Navbar = () => {
           <MobileNavigation items={links} />
         </div>
       </nav>
-    </div>
+    </header>
   );
 };

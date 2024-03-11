@@ -8,7 +8,7 @@ dotenv.config({
 
 const strapiConfig = {
   apiURL: process.env.STRAPI_API_URL || 'http://127.0.0.1:1337',
-  collectionTypes: ['skill']
+  collectionTypes: ['skill', 'main-info']
 };
 
 const gatsbyRequiredRules = path.join(
@@ -22,7 +22,7 @@ const gatsbyRequiredRules = path.join(
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `ZdebCode`,
+    title: `Adam Zdebel - Frontend Web Developer`,
     siteUrl: `https://www.yourdomain.tld`
   },
   graphqlTypegen: true,

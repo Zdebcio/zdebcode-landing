@@ -1,21 +1,22 @@
 /** @type {import('tailwindcss').Config} */
+
+function themeVariants({ addVariant }) {
+  addVariant('tall', '@media (min-height: 500px)');
+}
+
 module.exports = {
   content: [`./src/pages/**/*.{js,jsx,ts,tsx}`, `./src/components/**/*.{js,jsx,ts,tsx}`],
   theme: {
-    extend: {
-      screens: {
-        tall: { raw: '(min-height: 500px)' }
-      }
-    }
+    extend: {}
   },
-  plugins: [require('daisyui')],
+  plugins: [themeVariants, require('daisyui')],
   daisyui: {
     themes: [
       {
         main: {
           primary: '#5FBFF9',
           secondary: '#20FC8F',
-          'primary-content': '#FFFFFF',
+          'primary-content': '#020122',
           'secondary-content': '#FFFFFF',
           accent: '#1B1A38',
           'accent-content': '#FFFFFF',

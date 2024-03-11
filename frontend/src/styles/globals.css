@@ -10,7 +10,7 @@
 
 @layer components {
   .start {
-    @apply relative min-h-svh py-3 sm:py-5 lg:py-10;
+    @apply relative flex min-h-svh flex-col py-3 sm:py-5 lg:py-10;
   }
 
   .start::before {
@@ -20,9 +20,21 @@
     @apply landscape:border-r-[60vw] landscape:border-t-[100svh] xl:landscape:border-r-[40vw];
   }
 
+  .start-content {
+    @apply section-px flex flex-1 flex-col items-center justify-center gap-4 landscape:items-end;
+  }
+
+  .start-btn {
+    @apply btn btn-circle btn-outline border-2 text-xl;
+  }
+
   .navbar-container {
-    @apply navbar relative top-0 z-50 min-h-20 bg-transparent transition-colors;
-    @apply px-5 sm:px-8 md:px-10 lg:px-20;
+    @apply absolute left-0 min-h-20 w-full;
+    @apply top-3 sm:top-5 lg:top-10;
+  }
+
+  .navigation-wrapper {
+    @apply section-px navbar relative top-0 z-50 min-h-20 bg-transparent transition-colors;
   }
 
   .mobile-nav {
@@ -42,5 +54,11 @@
     @apply hover:bg-primary/5 hover:text-secondary;
     @apply focus:bg-primary/5 focus:text-secondary;
     @apply active:bg-primary/10 active:text-secondary;
+  }
+}
+
+@layer utilities {
+  .section-px {
+    @apply px-5 sm:px-8 md:px-10 lg:px-20;
   }
 }

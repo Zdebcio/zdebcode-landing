@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "main_infos",
+  "info": {
+    "singularName": "main-info",
+    "pluralName": "main-infos",
+    "displayName": "main-info",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "github": {
+      "type": "string",
+      "required": true
+    },
+    "linkedin": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "position": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
