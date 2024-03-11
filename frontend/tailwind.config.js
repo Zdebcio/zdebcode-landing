@@ -1,14 +1,15 @@
 /** @type {import('tailwindcss').Config} */
+
+function themeVariants({ addVariant }) {
+  addVariant('tall', '@media (min-height: 500px)');
+}
+
 module.exports = {
   content: [`./src/pages/**/*.{js,jsx,ts,tsx}`, `./src/components/**/*.{js,jsx,ts,tsx}`],
   theme: {
-    extend: {
-      screens: {
-        tall: { raw: '(min-height: 500px)' }
-      }
-    }
+    extend: {}
   },
-  plugins: [require('daisyui')],
+  plugins: [themeVariants, require('daisyui')],
   daisyui: {
     themes: [
       {
